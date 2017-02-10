@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondViewModel" />
+
+        <variable
+            name="actionHandler"
+            type="com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondView.ActionHandler" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text from the first view:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{vm.firstViewModel.string}" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> actionHandler.onSwitchThirdViewVisibleClick()}"
+                android:text="Switch third view visibility" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

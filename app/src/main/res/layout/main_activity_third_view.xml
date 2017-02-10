@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdViewModel" />
+
+        <variable
+            name="actionHandler"
+            type="com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdView.ActionHandler" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="@{vm.viewIsShown ? View.VISIBLE : View.GONE}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the third view!" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> actionHandler.onHideThirdViewClick()}"
+                android:text="Hide this view" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
