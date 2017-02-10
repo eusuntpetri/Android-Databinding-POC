@@ -32,4 +32,9 @@ public class MainPresenter implements MainContract.Presenter {
     public void onHideThirdViewClick() {
         mView.hideThirdView();
     }
+
+    @Override
+    public void onStartSecondaryActivityClick() {
+        mView.startSecondaryActivity();
+    }
 }

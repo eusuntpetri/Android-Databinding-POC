@@ -26,5 +26,7 @@ public interface MainContract {
         void switchThirdViewVisibility();
 
         void hideThirdView();
+
+        void startSecondaryActivity();
     }
 }

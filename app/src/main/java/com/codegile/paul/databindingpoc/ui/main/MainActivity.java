@@ -1,5 +1,6 @@
 package com.codegile.paul.databindingpoc.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondV
 import com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondViewModel;
 import com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdView;
 import com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdViewModel;
+import com.codegile.paul.databindingpoc.ui.secondary.SecondaryActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
         ButterKnife.bind(this);
 
         this.mFirstViewModel = new MainActivityFirstViewModel();
@@ -71,5 +73,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     public void hideThirdView() {
         mThirdViewModel.setViewIsShown(false);
+    }
+
+    @Override
+    public void startSecondaryActivity() {
+        startActivity(new Intent(MainActivity.this, SecondaryActivity.class));
     }
 }

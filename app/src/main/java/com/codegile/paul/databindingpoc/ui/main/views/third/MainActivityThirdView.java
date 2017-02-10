@@ -16,6 +16,8 @@ public class MainActivityThirdView
 
     public interface ActionHandler {
         void onHideThirdViewClick();
+
+        void onStartSecondaryActivityClick();
     }
 
     public MainActivityThirdView(Context context, AttributeSet attrs) {
