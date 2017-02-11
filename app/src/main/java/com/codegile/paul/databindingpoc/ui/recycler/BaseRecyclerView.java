@@ -31,7 +31,7 @@ public class BaseRecyclerView extends RecyclerView {
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs, R.styleable.BaseRecyclerView, 0, 0);
         try {
-            String fullLayoutName = a.getString(R.styleable.BaseRecyclerView_itemLayoutId);
+            String fullLayoutName = a.getString(R.styleable.BaseRecyclerView_itemLayout);
             String layoutName = fullLayoutName.substring(fullLayoutName.lastIndexOf('/') + 1, fullLayoutName.indexOf(".xml"));
             itemLayoutId = context.getResources().getIdentifier(layoutName, "layout", context.getPackageName());
         } catch (Exception e) {

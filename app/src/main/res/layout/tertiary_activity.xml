@@ -28,14 +28,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                app:itemLayoutId="@layout/tertiary_activity_item_1"
+                app:itemLayout="@layout/tertiary_activity_item_1"
                 app:items="@{vm.items}" />
 
             <com.codegile.paul.databindingpoc.ui.recycler.BaseRecyclerView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                app:itemLayoutId="@layout/tertiary_activity_item_2"
+                app:itemLayout="@layout/tertiary_activity_item_2"
                 app:items="@{vm.items}" />
 
         </LinearLayout>
