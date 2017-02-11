@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.codegile.paul.databindingpoc.ui.main.MainActivityShapesViewModel" />
+
+        <variable
+            name="actionHandler"
+            type="com.codegile.paul.databindingpoc.ui.main.MainContract.Presenter" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="#4eee"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Shape View Overlay" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> actionHandler.onRandomizePositionsClick()}"
+                android:text="Random view positions" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> actionHandler.onSwapViewVisibilityClick()}"
+                android:text="Swap view visibility" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@{vm.firstCircleLeft}"
+            android:layout_marginTop="@{vm.firstCircleTop}"
+            android:background="@drawable/circle"
+            android:visibility="@{vm.circlesVisible ? View.VISIBLE : View.GONE}" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@{vm.secondCircleLeft}"
+            android:layout_marginTop="@{vm.secondCircleTop}"
+            android:background="@drawable/circle"
+            android:visibility="@{vm.circlesVisible ? View.VISIBLE: View.GONE}" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@{vm.thirdCircleLeft}"
+            android:layout_marginTop="@{vm.thirdCircleTop}"
+            android:background="@drawable/circle"
+            android:visibility="@{vm.circlesVisible ? View.VISIBLE : View.GONE}" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@{vm.firstSquareLeft}"
+            android:layout_marginTop="@{vm.firstSquareTop}"
+            android:background="@drawable/square"
+            android:visibility="@{vm.squaresVisible ? View.VISIBLE : View.GONE}" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@{vm.secondSquareLeft}"
+            android:layout_marginTop="@{vm.secondSquareTop}"
+            android:background="@drawable/square"
+            android:visibility="@{vm.squaresVisible ? View.VISIBLE: View.GONE}" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@{vm.thirdSquareLeft}"
+            android:layout_marginTop="@{vm.thirdSquareTop}"
+            android:background="@drawable/square"
+            android:visibility="@{vm.squaresVisible ? View.VISIBLE : View.GONE}" />
+
+    </RelativeLayout>
+
+</layout>

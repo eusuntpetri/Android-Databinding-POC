@@ -37,4 +37,14 @@ public class MainPresenter implements MainContract.Presenter {
     public void onStartSecondaryActivityClick() {
         mView.startSecondaryActivity();
     }
+
+    @Override
+    public void onRandomizePositionsClick() {
+        mView.randomizeShapePositions();
+    }
+
+    @Override
+    public void onSwapViewVisibilityClick() {
+        mView.swapActiveShape();
+    }
 }

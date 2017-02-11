@@ -1,11 +1,14 @@
 package com.codegile.paul.databindingpoc.ui;
 
 import android.content.Context;
+import android.databinding.OnRebindCallback;
 import android.databinding.ViewDataBinding;
+import android.support.transition.TransitionManager;
 import android.util.AttributeSet;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.android.databinding.library.baseAdapters.BR;
+import com.codegile.paul.databindingpoc.BR;
 
 /**
  * Created by Paul on 10-Feb-17.
@@ -21,6 +24,13 @@ public abstract class BaseView<ViewBinding extends ViewDataBinding, ViewModel, A
         super(context, attrs);
         if (isInEditMode()) return;
         this.mViewBinding = getViewBinding();
+        this.mViewBinding.addOnRebindCallback(new OnRebindCallback<ViewBinding>() {
+            @Override
+            public boolean onPreBind(ViewBinding binding) {
+                TransitionManager.beginDelayedTransition((ViewGroup) mViewBinding.getRoot());
+                return super.onPreBind(binding);
+            }
+        });
     }
 
     protected abstract ViewBinding getViewBinding();

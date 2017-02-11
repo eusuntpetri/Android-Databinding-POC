@@ -2,6 +2,7 @@ package com.codegile.paul.databindingpoc.ui.main;
 
 import com.codegile.paul.databindingpoc.ui.main.views.first.MainActivityFirstView;
 import com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondView;
+import com.codegile.paul.databindingpoc.ui.main.views.shapes.MainActivityShapesView;
 import com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdView;
 
 /**
@@ -13,7 +14,8 @@ public interface MainContract {
     interface Presenter extends
             MainActivityFirstView.ActionHandler,
             MainActivitySecondView.ActionHandler,
-            MainActivityThirdView.ActionHandler {
+            MainActivityThirdView.ActionHandler,
+            MainActivityShapesView.ActionHandler {
 
     }
 
@@ -26,6 +28,10 @@ public interface MainContract {
         void switchThirdViewVisibility();
 
         void hideThirdView();
+
+        void randomizeShapePositions();
+
+        void swapActiveShape();
 
         void startSecondaryActivity();
     }

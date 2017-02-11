@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-
-    <com.codegile.paul.databindingpoc.ui.main.views.first.MainActivityFirstView
-        android:id="@+id/first_view"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.5" />
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.5"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondView
-            android:id="@+id/second_view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+        <com.codegile.paul.databindingpoc.ui.main.views.first.MainActivityFirstView
+            android:id="@+id/first_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="0.5" />
 
-        <com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdView
-            android:id="@+id/third_view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondView
+                android:id="@+id/second_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdView
+                android:id="@+id/third_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+    <com.codegile.paul.databindingpoc.ui.main.views.shapes.MainActivityShapesView
+        android:id="@+id/shapes_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
