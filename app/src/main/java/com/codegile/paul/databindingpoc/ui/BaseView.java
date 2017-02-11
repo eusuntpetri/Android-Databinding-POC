@@ -24,6 +24,9 @@ public abstract class BaseView<ViewBinding extends ViewDataBinding, ViewModel, A
         super(context, attrs);
         if (isInEditMode()) return;
         this.mViewBinding = getViewBinding();
+    }
+
+    protected void enableTransitionAnimations() {
         this.mViewBinding.addOnRebindCallback(new OnRebindCallback<ViewBinding>() {
             @Override
             public boolean onPreBind(ViewBinding binding) {

@@ -22,6 +22,7 @@ public class MainActivityThirdView
 
     public MainActivityThirdView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        enableTransitionAnimations();
     }
 
     @Override

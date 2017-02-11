@@ -22,6 +22,7 @@ public class MainActivityShapesView extends BaseView<MainActivityShapesViewBindi
 
     public MainActivityShapesView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        enableTransitionAnimations();
     }
 
     @Override
