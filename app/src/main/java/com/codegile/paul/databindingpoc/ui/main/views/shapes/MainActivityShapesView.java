@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 
 import com.codegile.paul.databindingpoc.databinding.MainActivityShapesViewBinding;
 import com.codegile.paul.databindingpoc.ui.BaseView;
-import com.codegile.paul.databindingpoc.ui.main.MainActivityShapesViewModel;
 
 /**
  * Created by Paul on 11-Feb-17.

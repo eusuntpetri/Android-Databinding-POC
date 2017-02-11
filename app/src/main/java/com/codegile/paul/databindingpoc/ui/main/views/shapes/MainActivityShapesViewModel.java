@@ -1,4 +1,4 @@
-package com.codegile.paul.databindingpoc.ui.main;
+package com.codegile.paul.databindingpoc.ui.main.views.shapes;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;

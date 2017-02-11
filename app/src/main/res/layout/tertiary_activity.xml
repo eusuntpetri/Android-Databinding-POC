@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.codegile.paul.databindingpoc.ui.tertiary.TertiaryViewModel" />
+
+        <variable
+            name="actionHandler"
+            type="com.codegile.paul.databindingpoc.ui.tertiary.TertiaryContract.Presenter" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.codegile.paul.databindingpoc.ui.recycler.BaseRecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                app:itemLayoutId="@layout/tertiary_activity_item_1"
+                app:items="@{vm.items}" />
+
+            <com.codegile.paul.databindingpoc.ui.recycler.BaseRecyclerView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                app:itemLayoutId="@layout/tertiary_activity_item_2"
+                app:items="@{vm.items}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> actionHandler.onAddItemClick()}"
+                android:text="Add item to ViewModel" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> actionHandler.onRefreshVmClick()}"
+                android:text="Reset ViewModel items" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

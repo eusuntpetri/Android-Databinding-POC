@@ -40,12 +40,25 @@
 
         </RelativeLayout>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="65dp"
-            android:padding="25dp"
-            android:text="@={vm.text}" />
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={vm.text}" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> actionHandler.onStartTertiaryActivityClick()}"
+                android:text="Start tertiary activity" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

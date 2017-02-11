@@ -9,10 +9,14 @@ public interface SecondaryContract {
     interface Presenter {
 
         void onClearClick();
+
+        void onStartTertiaryActivityClick();
     }
 
     interface View {
 
         void toastAndClearText();
+
+        void startTertiaryActivity();
     }
 }

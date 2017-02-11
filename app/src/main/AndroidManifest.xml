@@ -18,6 +18,8 @@
 
         <activity android:name=".ui.secondary.SecondaryActivity" />
 
+        <activity android:name=".ui.tertiary.TertiaryActivity" />
+
     </application>
 
 </manifest>

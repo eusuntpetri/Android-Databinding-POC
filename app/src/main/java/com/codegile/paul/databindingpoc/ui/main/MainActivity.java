@@ -12,6 +12,7 @@ import com.codegile.paul.databindingpoc.ui.main.views.first.MainActivityFirstVie
 import com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondView;
 import com.codegile.paul.databindingpoc.ui.main.views.second.MainActivitySecondViewModel;
 import com.codegile.paul.databindingpoc.ui.main.views.shapes.MainActivityShapesView;
+import com.codegile.paul.databindingpoc.ui.main.views.shapes.MainActivityShapesViewModel;
 import com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdView;
 import com.codegile.paul.databindingpoc.ui.main.views.third.MainActivityThirdViewModel;
 import com.codegile.paul.databindingpoc.ui.secondary.SecondaryActivity;

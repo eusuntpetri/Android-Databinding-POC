@@ -16,4 +16,9 @@ public class SecondaryPresenter implements SecondaryContract.Presenter {
     public void onClearClick() {
         mView.toastAndClearText();
     }
+
+    @Override
+    public void onStartTertiaryActivityClick() {
+        mView.startTertiaryActivity();
+    }
 }
