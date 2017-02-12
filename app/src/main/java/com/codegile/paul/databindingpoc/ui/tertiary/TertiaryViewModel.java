@@ -18,7 +18,7 @@ public class TertiaryViewModel extends BaseObservable {
     private List<Item> items = new ArrayList<>();
 
     public TertiaryViewModel() {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 1; i < 6; i++) {
             items.add(new Item("Item number " + i));
         }
     }
@@ -30,6 +30,11 @@ public class TertiaryViewModel extends BaseObservable {
 
     public void setItems(List<Item> items) {
         this.items = items;
+        notifyPropertyChanged(BR.items);
+    }
+
+    public void addItem(Item item) {
+        items.add(item);
         notifyPropertyChanged(BR.items);
     }
 }
