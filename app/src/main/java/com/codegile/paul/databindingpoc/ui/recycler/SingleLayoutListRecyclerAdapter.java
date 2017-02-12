@@ -17,21 +17,21 @@ import java.util.List;
  * Created by Paul on 11-Feb-17.
  */
 
-public class BaseRecyclerView extends RecyclerView {
+public class SingleLayoutListRecyclerAdapter extends RecyclerView {
 
     private int itemLayoutId;
     private List items;
 
-    public BaseRecyclerView(Context context, @Nullable AttributeSet attrs) {
+    public SingleLayoutListRecyclerAdapter(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         getAttributes(context, attrs);
     }
 
     private void getAttributes(Context context, AttributeSet attrs) {
         TypedArray a = context.getTheme().obtainStyledAttributes(
-                attrs, R.styleable.BaseRecyclerView, 0, 0);
+                attrs, R.styleable.SingleLayoutListRecyclerAdapter, 0, 0);
         try {
-            String fullLayoutName = a.getString(R.styleable.BaseRecyclerView_itemLayout);
+            String fullLayoutName = a.getString(R.styleable.SingleLayoutListRecyclerAdapter_itemLayout);
             String layoutName = fullLayoutName.substring(fullLayoutName.lastIndexOf('/') + 1, fullLayoutName.indexOf(".xml"));
             itemLayoutId = context.getResources().getIdentifier(layoutName, "layout", context.getPackageName());
         } catch (Exception e) {
@@ -62,12 +62,12 @@ public class BaseRecyclerView extends RecyclerView {
         setAdapter(new SingleLayoutRecyclerAdapter(itemLayoutId) {
             @Override
             protected Object getObjForPosition(int position) {
-                return BaseRecyclerView.this.items.get(position);
+                return SingleLayoutListRecyclerAdapter.this.items.get(position);
             }
 
             @Override
             public int getItemCount() {
-                return BaseRecyclerView.this.items.size();
+                return SingleLayoutListRecyclerAdapter.this.items.size();
             }
         });
         getLayoutManager().onRestoreInstanceState(state);
